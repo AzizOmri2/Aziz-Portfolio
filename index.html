@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="pageTitle">Mohamed Aziz Omri — Cloud & DevOps Engineer</title>
+  <meta name="description" content="Portfolio — Omri Mohamed Aziz, Cloud & DevOps Engineer. HRProjectFlow, DevOps, AI, Kubernetes." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/icons/portfolio.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" data-i18n="brandName">Mohamed Aziz Omri</a>
+
+      <ul class="nav-list" id="navList">
+        <li><a href="#about" data-i18n="navAbout">About</a></li>
+        <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
+        <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
+        <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+      </ul>
+
+      <!-- 🌐 LANGUAGE TOGGLE -->
+      
+      <button id="langToggle" class="btn btn-outline">FR</button>
+      
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 id="hero_name" data-i18n="heroName">Mohamed Aziz Omri</h1>
+          <p class="subtitle" id="hero_title" data-i18n="heroTitle">Cloud & DevOps Engineer • Web Development • AI</p>
+          <p class="lead" data-i18n="heroLead">
+            I craft innovative, automated web infrastructures enhanced with AI, focusing on scalability, efficiency, and exceptional user experiences.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects" data-i18n="viewProjects">View Projects</a>
+            <a class="btn btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener" data-i18n="downloadCV">Download CV</a>
+          </div>
+          <div class="contact-inline">
+            <a class="link" href="mailto:azizomriomri@gmail.com"><i class="fa-solid fa-envelope"></i> azizomriomri@gmail.com</a>
+            <a class="link" href="tel:+21625742236"><i class="fa-solid fa-phone"></i> +216 25 742 236</a>
+            <a class="link" href="https://github.com/AzizOmri2" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a class="link" href="https://linkedin.com/in/med-aziz-omri" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="hero-photo" aria-hidden="true">
+          <img src="assets/images/avatars/avatar3.jpg" alt="Portrait of Omri Mohamed Aziz" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT + EXPERIENCE / EDUCATION -->
+    <section id="about" class="container section card">
+      <h2 data-i18n="aboutTitle">About</h2>
+      <p data-i18n="aboutParagraph">
+        Computer Science Engineer specialized in Cloud Computing & DevOps, with expertise in web development and artificial intelligence.
+        I build production-ready solutions combining automation, observability, and intelligent features to improve user experience and operational efficiency.
+      </p>
+
+      <div class="tab-buttons">
+        <button id="expBtn" class="tab-btn active" data-i18n="expBtnLabel">Experience</button>
+        <button id="eduBtn" class="tab-btn" data-i18n="eduBtnLabel">Education</button>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div id="experienceSection" class="tab-content show">
+        <div class="exp-item">
+          <h3 data-i18n="exp1Title">Final Year Internship – Cloud & AI Engineer</h3>
+          <p class="muted" data-i18n="exp1Place">Com & Dev — Feb 2025 – Aug 2025</p>
+          <p data-i18n="exp1Desc">
+            Designed and developed an intelligent and scalable web platform for HR and project management.
+            The platform integrates AI modules for CV data extraction, automatic profile generation, and intelligent job–candidate matching.
+            Implemented a CI/CD pipeline with Jenkins for automation and reliability, and containerized services for consistent deployment.
+          </p>
+          <ul class="tick-list">
+            <li data-i18n="exp1Bullet1">Built a modular and efficient architecture ensuring smooth interaction between components.</li>
+            <li data-i18n="exp1Bullet2">Integrated AI-powered features for CV parsing, data extraction, and profile generation.</li>
+            <li data-i18n="exp1Bullet3">Developed intelligent job–candidate matching to optimize recruitment workflows.</li>
+            <li data-i18n="exp1Bullet4">Implemented CI/CD automation for continuous integration and deployment.</li>
+            <li data-i18n="exp1Bullet5">Used Docker and containerized environments to ensure consistency across stages.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <h3 data-i18n="exp2Title">DevOps Intern</h3>
+          <p class="muted" data-i18n="exp2Place">Taremmant — Jun 2024 – Aug 2024</p>
+          <p data-i18n="exp2Desc">
+            Built and deployed a fully automated CI/CD pipeline using Jenkins, Docker, and SonarQube, with artifact management via Nexus and performance monitoring through Prometheus and Grafana to ensure reliable and efficient software delivery.
+          </p>
+          <ul class="tick-list">
+            <li data-i18n="exp2Bullet1">Configured Jenkins pipelines for CI/CD workflows.</li>
+            <li data-i18n="exp2Bullet2">Containerized applications using Docker for reproducible environments.</li>
+            <li data-i18n="exp2Bullet3">Integrated SonarQube for automated code analysis and quality control.</li>
+            <li data-i18n="exp2Bullet4">Monitored system metrics with Prometheus and Grafana dashboards.</li>
+            <li data-i18n="exp2Bullet5">Managed build artifacts through Nexus Repository Manager.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div id="educationSection" class="tab-content">
+        <div class="exp-item">
+          <h3 data-i18n="eduTitle">Engineering National Degree in Computer Science</h3>
+          <p class="muted" data-i18n="eduPlace">ESPRIT — Sept 2020 – Jun 2025 (Graduated)</p>
+          <ul class="tick-list">
+            <li data-i18n="edu1">Specialization: Cloud Computing</li>
+            <li data-i18n="edu2">Learned advanced concepts in DevOps, CI/CD, and cloud architecture.</li>
+            <li data-i18n="edu3">Built several web and cloud projects as part of the curriculum.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="container section">
+      <h2 data-i18n="projectsTitle">Projects</h2>
+      <br>
+      <div class="cards-grid">
+        <div class="project-card" data-project="hrprojectflow">
+          <img src="assets/images/projects/hrprojectworkflow/hrprojectflow.png" alt="HR Project Workflow Preview" class="project-img">
+          <h3 data-i18n="proj_hr_title">HR Project WorkFlow</h3>
+          <div class="card-actions">
+            <button class="btn-small overview-btn" data-proj="hrprojectflow" title="Overview">
+              <i class="fas fa-eye"></i>
+            </button>
+            <a class="btn-small btn-ghost" href="#" target="_blank" rel="noopener" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card" data-project="oneurban">
+          <img src="assets/images/projects/oneurban/logo oneurban.png" alt="One Urban Preview" class="project-img">
+          <h3 data-i18n="proj_oneurban_title">One Urban</h3>
+          <div class="card-actions">
+            <button class="btn-small overview-btn" data-proj="oneurban" title="Overview">
+              <i class="fas fa-eye"></i>
+            </button>
+            <a class="btn-small btn-ghost" href="https://github.com/AzizOmri2/OneUrban-WebApplication" target="_blank" rel="noopener" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card" data-project="energybox">
+          <img src="assets/images/projects/energybox/energybox logo.png" alt="Energy Box Preview" class="project-img">
+          <h3 data-i18n="proj_energy_title">Energy Box</h3>
+          <div class="card-actions">
+            <button class="btn-small overview-btn" data-proj="energybox" title="Overview">
+              <i class="fas fa-eye"></i>
+            </button>
+            <a class="btn-small btn-ghost" href="https://github.com/AzizOmri2/piDev-rocketDev2023" target="_blank" rel="noopener" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card" data-project="esprithub">
+          <img src="assets/images/projects/esprithub/esprithub logo.png" alt="Esprit Hub Preview" class="project-img">
+          <h3 data-i18n="proj_esprit_title">Esprit Hub</h3>
+          <div class="card-actions">
+            <button class="btn-small overview-btn" data-proj="esprithub" title="Overview">
+              <i class="fas fa-eye"></i>
+            </button>
+            <a class="btn-small btn-ghost" href="https://github.com/AzizOmri2/piDev-CloudFractus2024" target="_blank" rel="noopener" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card" data-project="pmwebapp">
+          <img src="assets/images/projects/pmwebapp/taremmant logo.png" alt="Project Management Web App Preview" class="project-img">
+          <h3 data-i18n="proj_pm_title">Project Management Web App</h3>
+          <div class="card-actions">
+            <button class="btn-small overview-btn" data-proj="pmwebapp" title="Overview">
+              <i class="fas fa-eye"></i>
+            </button>
+            <a class="btn-small btn-ghost" href="https://github.com/AzizOmri2/devops-pipeline-test" target="_blank" rel="noopener" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card" data-project="paidleave">
+          <img src="assets/images/projects/paidleave/logo com&dev.png" alt="Paid Leave Management Preview" class="project-img">
+          <h3 data-i18n="proj_paidleave_title">Paid Leave Management</h3>
+          <div class="card-actions">
+            <button class="btn-small overview-btn" data-proj="paidleave" title="Overview">
+              <i class="fas fa-eye"></i>
+            </button>
+            <a class="btn-small btn-ghost" href="https://github.com/AzizOmri2/ComAndDev-Permissions-Management/tree/Permissions" target="_blank" rel="noopener" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="container section">
+      <h2 data-i18n="skillsTitle">Skills</h2>
+      <br>
+
+      <div class="skills-category">
+        <h3 data-i18n="skill_prog">Programming Languages</h3>
+        <div class="skills-list">
+          <span>C</span>
+          <span>C++</span>
+          <span>Java</span>
+          <span>Ruby</span>
+          <span>Python</span>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3 data-i18n="skill_web">Web Development & Frameworks</h3>
+        <div class="skills-list">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>PHP</span>
+          <span>Symfony</span>
+          <span>Spring Boot</span>
+          <span>Ruby on Rails</span>
+          <span>Angular</span>
+          <span>.NET</span>
+          <span>MySQL</span>
+          <span>SQLite</span>
+          <span>PostgreSQL</span>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3 data-i18n="skill_cloud">Cloud & DevOps Tools</h3>
+        <div class="skills-list">
+          <span>Git</span>
+          <span>CI/CD</span>
+          <span>Jenkins</span>
+          <span>SonarQube</span>
+          <span>Nexus</span>
+          <span>Docker</span>
+          <span>Kubernetes</span>
+          <span>Prometheus</span>
+          <span>Grafana</span>
+          <span>OpenStack</span>
+          <span>Azure</span>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3 data-i18n="skill_soft">Soft Skills</h3>
+        <div class="skills-list">
+          <span>Scrum</span>
+          <span>Problem Solving</span>
+          <span>Teamwork</span>
+          <span>Adaptability</span>
+          <span>Critical Thinking</span>
+          <span>Communication</span>
+          <span>Time Management</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="container section">
+      <h2 data-i18n="contactTitle">Contact</h2>
+      <p class="contact-subtext" data-i18n="contactSubtext">
+        Let’s connect! Feel free to reach out for collaboration, opportunities, or just to say hello.
+      </p>
+      <div class="contact-grid">
+        <a href="mailto:azizomriomri@gmail.com" target="_blank" rel="noopener">
+          <i class="fa-solid fa-envelope"></i>
+          <span>azizomriomri@gmail.com</span>
+        </a>
+        <a href="tel:+21625742236">
+          <i class="fa-solid fa-phone"></i>
+          <span>+216 25 742 236</span>
+        </a>
+        <a href="https://github.com/AzizOmri2" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/med-aziz-omri" target="_blank" rel="noopener">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="assets/resume.pdf" target="_blank" rel="noopener">
+          <i class="fa-solid fa-file"></i>
+          <span>Resume</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p id="footer_text">© <span id="year"></span> <span data-i18n="footerName">Mohamed Aziz Omri</span></p>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">×</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+
+      <!-- 🖼️ Project Images -->
+      <div id="modalImages" class="modal-images"></div>
+
+      <h4 id="modalKeyTitle"></h4>
+      <ul id="modalList"></ul>
+      <p class="modal-skills" id="modalSkills"></p>
+    </div>
+  </div>
+
+  <script src="translations.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

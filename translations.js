@@ -1,0 +1,144 @@
+// ===== Translations =====
+const translations = {
+  en: {
+    pageTitle: "Mohamed Aziz Omri — Cloud & DevOps Engineer",
+    brandName: "Mohamed Aziz Omri",
+    navAbout: "About",
+    navProjects: "Projects",
+    navSkills: "Skills",
+    navContact: "Contact",
+
+    heroName: "Mohamed Aziz Omri",
+    heroTitle: "Cloud & DevOps Engineer • Web Development • AI",
+    heroLead: "I craft innovative, automated web infrastructures enhanced with AI, focusing on scalability, efficiency, and exceptional user experiences.",
+    viewProjects: "View Projects",
+    downloadCV: "Download CV",
+
+    aboutTitle: "About",
+    aboutParagraph: "Computer Science Engineer specialized in Cloud Computing & DevOps, with expertise in web development and artificial intelligence. I build production-ready solutions combining automation, observability, and intelligent features to improve user experience and operational efficiency.",
+    expBtnLabel: "Experience",
+    eduBtnLabel: "Education",
+
+    exp1Title: "Final Year Internship – Cloud & AI Engineer",
+    exp1Place: "Com & Dev — Feb 2025 – Aug 2025",
+    exp1Desc: "Designed and developed an intelligent and scalable web platform for HR and project management. The platform integrates AI modules for CV data extraction, automatic profile generation, and intelligent job–candidate matching. Implemented a CI/CD pipeline with Jenkins for automation and reliability, and containerized services for consistent deployment.",
+    exp1Bullet1: "Built a modular and efficient architecture ensuring smooth interaction between components.",
+    exp1Bullet2: "Integrated AI-powered features for CV parsing, data extraction, and profile generation.",
+    exp1Bullet3: "Developed intelligent job–candidate matching to optimize recruitment workflows.",
+    exp1Bullet4: "Implemented CI/CD automation for continuous integration and deployment.",
+    exp1Bullet5: "Used Docker and containerized environments to ensure consistency across stages.",
+
+    exp2Title: "DevOps Intern",
+    exp2Place: "Taremmant — Jun 2024 – Aug 2024",
+    exp2Desc: "Built and deployed a fully automated CI/CD pipeline using Jenkins, Docker, and SonarQube, with artifact management via Nexus and performance monitoring through Prometheus and Grafana to ensure reliable and efficient software delivery.",
+    exp2Bullet1: "Configured Jenkins pipelines for CI/CD workflows.",
+    exp2Bullet2: "Containerized applications using Docker for reproducible environments.",
+    exp2Bullet3: "Integrated SonarQube for automated code analysis and quality control.",
+    exp2Bullet4: "Monitored system metrics with Prometheus and Grafana dashboards.",
+    exp2Bullet5: "Managed build artifacts through Nexus Repository Manager.",
+
+    eduTitle: "Engineering National Degree in Computer Science",
+    eduPlace: "ESPRIT — Sept 2020 – Jun 2025 (Graduated)",
+    edu1: "Specialization: Cloud Computing",
+    edu2: "Learned advanced concepts in DevOps, CI/CD, and cloud architecture.",
+    edu3: "Built several web and cloud projects as part of the curriculum.",
+
+    projectsTitle: "Projects",
+    proj_hr_title: "HR Project WorkFlow",
+    proj_oneurban_title: "One Urban",
+    proj_pm_title: "Project Management Web App",
+    proj_esprit_title: "Esprit Hub",
+    proj_energy_title: "Energy Box",
+    proj_paidleave_title: "Paid Leave Management",
+
+    skillsTitle: "Skills",
+    skill_prog: "Programming Languages",
+    skill_web: "Web Development & Frameworks",
+    skill_cloud: "Cloud & DevOps Tools",
+    skill_soft: "Soft Skills",
+    softSkills: [
+      "Scrum",
+      "Problem Solving",
+      "Teamwork",
+      "Adaptability",
+      "Critical Thinking",
+      "Communication",
+      "Time Management"
+    ],
+
+    contactTitle: "Contact",
+    contactSubtext: "Let’s connect! Feel free to reach out for collaboration, opportunities, or just to say hello.",
+    footerName: "Mohamed Aziz Omri"
+  },
+
+  fr: {
+    pageTitle: "Mohamed Aziz Omri — Ingénieur Cloud & DevOps",
+    brandName: "Mohamed Aziz Omri",
+    navAbout: "À propos",
+    navProjects: "Projets",
+    navSkills: "Compétences",
+    navContact: "Contact",
+
+    heroName: "Mohamed Aziz Omri",
+    heroTitle: "Ingénieur Cloud & DevOps • Développement Web • IA",
+    heroLead: "Je conçois des infrastructures web innovantes et automatisées, enrichies par l’IA, axées sur la scalabilité, l’efficacité et une expérience utilisateur optimale.",
+    viewProjects: "Voir les projets",
+    downloadCV: "Télécharger le CV",
+
+    aboutTitle: "À propos",
+    aboutParagraph: "Ingénieur en informatique spécialisé en Cloud Computing et DevOps, avec une expertise en développement web et en intelligence artificielle. Je conçois des solutions prêtes pour la production, alliant automatisation, observabilité et fonctionnalités intelligentes pour améliorer l’expérience utilisateur et l’efficacité opérationnelle.",
+    expBtnLabel: "Expérience",
+    eduBtnLabel: "Éducation",
+
+    exp1Title: "Projet de fin d’études – Ingénieur Cloud & IA",
+    exp1Place: "Com & Dev — Févr. 2025 – Août 2025",
+    exp1Desc: "Conception et développement d’une plateforme web intelligente et évolutive pour la gestion RH et de projets. Intégration de modules IA pour l’extraction automatique de données de CV, la génération de profils et la correspondance intelligente emploi–candidat. Mise en place d’un pipeline CI/CD avec Jenkins et conteneurisation des services.",
+    exp1Bullet1: "Conception d’une architecture modulaire et performante assurant une interaction fluide entre les composants.",
+    exp1Bullet2: "Intégration de fonctionnalités basées sur l’IA pour l’analyse et l’extraction des données de CV.",
+    exp1Bullet3: "Développement d’un algorithme intelligent de correspondance emploi–candidat.",
+    exp1Bullet4: "Mise en œuvre de l’automatisation CI/CD pour l’intégration et le déploiement continus.",
+    exp1Bullet5: "Utilisation de Docker pour garantir la cohérence des environnements.",
+
+    exp2Title: "Stagiaire DevOps",
+    exp2Place: "Taremmant — Juin 2024 – Août 2024",
+    exp2Desc: "Mise en place d’un pipeline CI/CD entièrement automatisé avec Jenkins, Docker et SonarQube, gestion des artefacts via Nexus et surveillance des performances avec Prometheus et Grafana pour un déploiement fiable et efficace.",
+    exp2Bullet1: "Configuration de pipelines Jenkins pour les workflows CI/CD.",
+    exp2Bullet2: "Conteneurisation des applications avec Docker pour des environnements reproductibles.",
+    exp2Bullet3: "Intégration de SonarQube pour l’analyse automatisée de la qualité du code.",
+    exp2Bullet4: "Surveillance des métriques système via Prometheus et tableaux de bord Grafana.",
+    exp2Bullet5: "Gestion des artefacts via Nexus Repository Manager.",
+
+    eduTitle: "Diplôme National d’Ingénieur en Informatique",
+    eduPlace: "ESPRIT — Sept. 2020 – Juin 2025 (Diplômé)",
+    edu1: "Spécialité : Cloud Computing",
+    edu2: "Apprentissage avancé des concepts de DevOps, CI/CD et architecture cloud.",
+    edu3: "Réalisation de plusieurs projets web et cloud dans le cadre du cursus.",
+
+    projectsTitle: "Projets Réalisés",
+    proj_hr_title: "HR Project WorkFlow",
+    proj_oneurban_title: "One Urban",
+    proj_pm_title: "Application Web de Gestion de Projets",
+    proj_esprit_title: "Esprit Hub",
+    proj_energy_title: "Energy Box",
+    proj_paidleave_title: "Gestion des Congés Payés",
+
+    skillsTitle: "Compétences",
+    skill_prog: "Langages de Programmation",
+    skill_web: "Développement Web & Frameworks",
+    skill_cloud: "Outils Cloud & DevOps",
+    skill_soft: "Compétences Comportementales",
+    softSkills: [
+      "Scrum",
+      "Résolution de problèmes",
+      "Travail en équipe",
+      "Adaptabilité",
+      "Esprit critique",
+      "Communication",
+      "Gestion du temps"
+    ],
+
+    contactTitle: "Contact",
+    contactSubtext: "Entrons en contact ! N’hésitez pas à me joindre pour une collaboration, une opportunité ou simplement pour échanger.",
+    footerName: "Mohamed Aziz Omri"
+  }
+};
