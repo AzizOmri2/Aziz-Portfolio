@@ -10,6 +10,47 @@ if (navToggle && navList) {
   });
 }
 
+// ===== Navbar Active Status =====
+const navLinks = document.querySelectorAll("#navList a");
+const sections = document.querySelectorAll("section");
+
+// ----- Active on Click -----
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+// ----- Active on Scroll -----
+window.addEventListener("scroll", () => {
+  let currentSection = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120; // adjust offset if needed
+    if (window.scrollY >= sectionTop) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${currentSection}`) {
+      link.classList.add("active");
+    }
+  });
+});
+
+// ===== Smooth Scroll for Nav Links =====
+document.querySelectorAll(".nav-list a[href^='#']").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute("href"));
+    if (target) target.scrollIntoView({ behavior: "smooth" });
+    navList.classList.remove("show"); // Close nav on mobile
+  });
+});
+
 // ===== Year Auto Update =====
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -245,6 +286,34 @@ if (overviewBtns.length && modalBackdrop) {
           const img = document.createElement("img");
           img.src = src;
           img.alt = `${data.title} preview`;
+          img.style.cursor = "pointer";
+
+          // Click to open full-size in new tab/lightbox
+          img.addEventListener("click", () => {
+            const lightbox = document.createElement("div");
+            lightbox.style.position = "fixed";
+            lightbox.style.top = "0";
+            lightbox.style.left = "0";
+            lightbox.style.width = "100%";
+            lightbox.style.height = "100%";
+            lightbox.style.background = "rgba(0,0,0,0.85)";
+            lightbox.style.display = "flex";
+            lightbox.style.alignItems = "center";
+            lightbox.style.justifyContent = "center";
+            lightbox.style.zIndex = "3000";
+
+            const lbImg = document.createElement("img");
+            lbImg.src = src;
+            lbImg.style.maxWidth = "90%";
+            lbImg.style.maxHeight = "90%";
+            lbImg.style.borderRadius = "12px";
+            lbImg.style.boxShadow = "0 0 20px rgba(30,144,255,0.5)";
+            lightbox.appendChild(lbImg);
+
+            lightbox.addEventListener("click", () => lightbox.remove());
+            document.body.appendChild(lightbox);
+          });
+
           imgContainer.appendChild(img);
         });
         modalDesc.insertAdjacentElement("afterend", imgContainer);
@@ -266,7 +335,58 @@ if (overviewBtns.length && modalBackdrop) {
       modalBackdrop.setAttribute("aria-hidden", "true");
     }
   });
+
+  // ===== Close modal / lightbox with ESC key =====
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      // Check if a lightbox exists
+      const lightbox = document.querySelector("body > div[style*='z-index: 3000']");
+      if (lightbox) {
+        lightbox.remove(); // Close lightbox first
+      } else if (modalBackdrop.classList.contains("show")) {
+        modalBackdrop.classList.remove("show"); // Close modal if no lightbox
+        modalBackdrop.setAttribute("aria-hidden", "true");
+      }
+    }
+  });
 }
+
+
+// ===== Certification Image Lightbox =====
+const certImages = document.querySelectorAll(".cert-img");
+
+certImages.forEach(img => {
+  img.style.cursor = "pointer"; // indicate clickable
+  img.addEventListener("click", () => {
+    const lightbox = document.createElement("div");
+    lightbox.style.position = "fixed";
+    lightbox.style.top = 0;
+    lightbox.style.left = 0;
+    lightbox.style.width = "100%";
+    lightbox.style.height = "100%";
+    lightbox.style.background = "rgba(0,0,0,0.85)";
+    lightbox.style.display = "flex";
+    lightbox.style.alignItems = "center";
+    lightbox.style.justifyContent = "center";
+    lightbox.style.zIndex = 3000;
+
+    const lbImg = document.createElement("img");
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbImg.style.maxWidth = "90%";
+    lbImg.style.maxHeight = "90%";
+    lbImg.style.borderRadius = "12px";
+    lbImg.style.boxShadow = "0 0 20px rgba(30,144,255,0.5)";
+
+    lightbox.appendChild(lbImg);
+
+    // Click anywhere to close
+    lightbox.addEventListener("click", () => lightbox.remove());
+
+    document.body.appendChild(lightbox);
+  });
+});
+
 
 // ===== Language System (Using translations.js) =====
 function loadTranslations(lang) {
@@ -318,3 +438,24 @@ if (langToggle) {
     populateSoftSkills(newLang); // ✅ Add this line
   });
 }
+
+
+// ===== Back to Top Button =====
+const backToTopBtn = document.getElementById("backToTop");
+
+// Show button after scrolling down 300px
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+});
+
+// Scroll smoothly to top when clicked
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});

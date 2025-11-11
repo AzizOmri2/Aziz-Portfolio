@@ -5,6 +5,7 @@ const translations = {
     brandName: "Mohamed Aziz Omri",
     navAbout: "About",
     navProjects: "Projects",
+    navCert: "Certifications",
     navSkills: "Skills",
     navContact: "Contact",
 
@@ -13,6 +14,17 @@ const translations = {
     heroLead: "I craft innovative, automated web infrastructures enhanced with AI, focusing on scalability, efficiency, and exceptional user experiences.",
     viewProjects: "View Projects",
     downloadCV: "Download CV",
+
+    doingTitle: "What I Do",
+    doingWebDevTitle: "Web Development",
+    doingWebDevDesc: "Building high-performance, responsive, and reliable websites with a focus on clean design and seamless functionality.",
+    doingDevOpsTitle: "DevOps",
+    doingDevOpsDesc: "Optimizing development workflows through CI/CD automation, cloud integration, and scalable infrastructure management.",
+    doingAITitle: "AI Development",
+    doingAIDesc: "Designing and experimenting with AI solutions, integrating machine learning models to enhance intelligent automation.",
+    doingDesignTitle: "Web Design",
+    doingDesignDesc: "Creating modern, intuitive, and aesthetically refined web interfaces that deliver exceptional user experiences.",
+
 
     aboutTitle: "About",
     aboutParagraph: "Computer Science Engineer specialized in Cloud Computing & DevOps, with expertise in web development and artificial intelligence. I build production-ready solutions combining automation, observability, and intelligent features to improve user experience and operational efficiency.",
@@ -51,6 +63,19 @@ const translations = {
     proj_energy_title: "Energy Box",
     proj_paidleave_title: "Paid Leave Management",
 
+
+    certTitle: "Certifications",
+    cert1Title: "Introduction to Microsoft Azure Cloud Services",
+    cert1Date: "Oct 2024",
+    cert1Desc: "Gained foundational knowledge of Microsoft Azure cloud concepts, core services, and cloud deployment models. Developed an understanding of cloud computing principles and essential Azure offerings.",
+    cert2Title: "Microsoft Azure Management Tools and Security Solutions",
+    cert2Date: "Nov 2024",
+    cert2Desc: "Learned to manage Azure resources using management tools and implement security best practices. Covered role-based access, monitoring, and governance to secure and maintain Azure environments.",
+    cert3Title: "Microsoft Azure Services and Lifecycles",
+    cert3Date: "Nov 2024",
+    cert3Desc: "Explored Azure services and their lifecycle management, including service provisioning, deployment, monitoring, and maintenance strategies for reliable cloud operations.",
+
+
     skillsTitle: "Skills",
     skill_prog: "Programming Languages",
     skill_web: "Web Development & Frameworks",
@@ -76,6 +101,7 @@ const translations = {
     brandName: "Mohamed Aziz Omri",
     navAbout: "À propos",
     navProjects: "Projets",
+    navCert: "Certifications",
     navSkills: "Compétences",
     navContact: "Contact",
 
@@ -84,6 +110,17 @@ const translations = {
     heroLead: "Je conçois des infrastructures web innovantes et automatisées, enrichies par l’IA, axées sur la scalabilité, l’efficacité et une expérience utilisateur optimale.",
     viewProjects: "Voir les projets",
     downloadCV: "Télécharger le CV",
+
+    doingTitle: "Domaines d’expertise",
+    doingWebDevTitle: "Développement Web",
+    doingWebDevDesc: "Conception de sites web performants, réactifs et fiables, alliant design soigné et fonctionnalités fluides.",
+    doingDevOpsTitle: "DevOps",
+    doingDevOpsDesc: "Optimisation des workflows de développement grâce à l’automatisation CI/CD, à l’intégration cloud et à la gestion d’infrastructures évolutives.",
+    doingAITitle: "Développement IA",
+    doingAIDesc: "Conception et expérimentation de solutions d’intelligence artificielle, intégrant des modèles d’apprentissage automatique pour améliorer l’automatisation intelligente.",
+    doingDesignTitle: "Conception Web",
+    doingDesignDesc: "Création d’interfaces web modernes, intuitives et esthétiques, offrant une expérience utilisateur exceptionnelle.",
+
 
     aboutTitle: "À propos",
     aboutParagraph: "Ingénieur en informatique spécialisé en Cloud Computing et DevOps, avec une expertise en développement web et en intelligence artificielle. Je conçois des solutions prêtes pour la production, alliant automatisation, observabilité et fonctionnalités intelligentes pour améliorer l’expérience utilisateur et l’efficacité opérationnelle.",
@@ -122,6 +159,18 @@ const translations = {
     proj_energy_title: "Energy Box",
     proj_paidleave_title: "Gestion des Congés Payés",
 
+    certTitle: "Certifications",
+    cert1Title: "Introduction aux services cloud Microsoft Azure",
+    cert1Date: "oct. 2024",
+    cert1Desc: "Acquisition des connaissances de base sur les concepts cloud Microsoft Azure, les services principaux et les modèles de déploiement cloud. Compréhension des principes de l'informatique en nuage et des services essentiels d'Azure.",
+    cert2Title: "Outils de gestion et solutions de sécurité Microsoft Azure",
+    cert2Date: "nov. 2024",
+    cert2Desc: "Apprentissage de la gestion des ressources Azure via les outils de gestion et mise en œuvre des meilleures pratiques de sécurité. Couverture de l'accès basé sur les rôles, la surveillance et la gouvernance pour sécuriser et maintenir les environnements Azure.",
+    cert3Title: "Services et cycles de vie Microsoft Azure",
+    cert3Date: "nov. 2024",
+    cert3Desc: "Exploration des services Azure et de leur gestion du cycle de vie, incluant la provision de services, le déploiement, la surveillance et les stratégies de maintenance pour des opérations cloud fiables.",
+
+    
     skillsTitle: "Compétences",
     skill_prog: "Langages de Programmation",
     skill_web: "Développement Web & Frameworks",

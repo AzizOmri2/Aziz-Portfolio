@@ -22,6 +22,7 @@
       <ul class="nav-list" id="navList">
         <li><a href="#about" data-i18n="navAbout">About</a></li>
         <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
+        <li><a href="#certifications" data-i18n="navCert">Certifications</a></li>
         <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
         <li><a href="#contact" data-i18n="navContact">Contact</a></li>
       </ul>
@@ -62,8 +63,52 @@
       </div>
     </section>
 
+
+    <!-- 💼 WHAT I DO SECTION -->
+    <section id="doing" class="container section">
+      <h2 data-i18n="doingTitle">What I Do</h2>
+      <div class="doing-grid">
+         
+        <div class="doing-item">
+          <i class="fa-solid fa-code doing-icon"></i>
+          <h3 data-i18n="doingWebDevTitle">Web Development</h3>
+          <p data-i18n="doingWebDevDesc">
+            Building high-performance, responsive, and reliable websites with a focus on clean design and seamless functionality.
+          </p>
+        </div>
+
+        <div class="doing-item">
+          <i class="fa-solid fa-gears doing-icon"></i>
+          <h3 data-i18n="doingDevOpsTitle">DevOps</h3>
+          <p data-i18n="doingDevOpsDesc">
+            Optimizing development workflows through CI/CD automation, cloud integration, and scalable infrastructure management.
+          </p>
+        </div>
+
+        <div class="doing-item">
+          <i class="fa-solid fa-brain doing-icon"></i>
+          <h3 data-i18n="doingAITitle">AI Development</h3>
+          <p data-i18n="doingAIDesc">
+            Designing and experimenting with AI solutions, integrating machine learning models to enhance intelligent automation.
+          </p>
+        </div>
+
+        <div class="doing-item">
+          <i class="fa-solid fa-pen-nib doing-icon"></i>
+          <h3 data-i18n="doingDesignTitle">Web Design</h3>
+          <p data-i18n="doingDesignDesc">
+            Creating modern, intuitive, and aesthetically refined web interfaces that deliver exceptional user experiences.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
     <!-- ABOUT + EXPERIENCE / EDUCATION -->
     <section id="about" class="container section card">
+
+      <!-- About -->
       <h2 data-i18n="aboutTitle">About</h2>
       <p data-i18n="aboutParagraph">
         Computer Science Engineer specialized in Cloud Computing & DevOps, with expertise in web development and artificial intelligence.
@@ -210,6 +255,48 @@
       </div>
     </section>
 
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="container section">
+      <h2 data-i18n="certTitle">Certifications</h2>
+      <div class="cert-grid">
+
+        <div class="cert-item">
+          <img src="assets/images/certifications/Coursera_Introduction_To_Microsoft_Azure_Cloud_Services.jpg" 
+              alt="Introduction to Microsoft Azure Cloud Services" 
+              class="cert-img">
+          <h3 data-i18n="cert1Title">Introduction to Microsoft Azure Cloud Services</h3>
+          <p class="cert-date" data-i18n="cert1Date">Oct 2024</p>
+          <p class="cert-desc" data-i18n="cert1Desc">
+            Gained foundational knowledge of Microsoft Azure cloud concepts, core services, and cloud deployment models. Developed an understanding of cloud computing principles and essential Azure offerings.
+          </p>
+        </div>
+
+        <div class="cert-item">
+          <img src="assets/images/certifications/Coursera_Microsoft_Azure_Management_Tools_And_Security_Solutions.jpg" 
+              alt="Microsoft Azure Management Tools and Security Solutions" 
+              class="cert-img">
+          <h3 data-i18n="cert2Title">Microsoft Azure Management Tools and Security Solutions</h3>
+          <p class="cert-date" data-i18n="cert2Date">Nov 2024</p>
+          <p class="cert-desc" data-i18n="cert2Desc">
+            Learned to manage Azure resources using management tools and implement security best practices. Covered role-based access, monitoring, and governance to secure and maintain Azure environments.
+          </p>
+        </div>
+
+        <div class="cert-item">
+          <img src="assets/images/certifications/Coursera_Microsoft_Azure_Services_And_Lifecycles.jpg" 
+              alt="Microsoft Azure Services and Lifecycles" 
+              class="cert-img">
+          <h3 data-i18n="cert3Title">Microsoft Azure Services and Lifecycles</h3>
+          <p class="cert-date" data-i18n="cert3Date">Nov 2024</p>
+          <p class="cert-desc" data-i18n="cert3Desc">
+            Explored Azure services and their lifecycle management, including service provisioning, deployment, monitoring, and maintenance strategies for reliable cloud operations.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
     <!-- SKILLS -->
     <section id="skills" class="container section">
       <h2 data-i18n="skillsTitle">Skills</h2>
@@ -330,6 +417,9 @@
       <p class="modal-skills" id="modalSkills"></p>
     </div>
   </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to top">&#8679;</button>
 
   <script src="translations.js"></script>
   <script src="assets/js/script.js"></script>
