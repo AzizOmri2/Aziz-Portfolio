@@ -93,6 +93,7 @@ const translations = {
 
     contactTitle: "Contact",
     contactSubtext: "Let’s connect! Feel free to reach out for collaboration, opportunities, or just to say hello.",
+    mapTitle: "Where You Can Find Me in Tunisia",
     footerName: "Mohamed Aziz Omri"
   },
 
@@ -188,6 +189,7 @@ const translations = {
 
     contactTitle: "Contact",
     contactSubtext: "Entrons en contact ! N’hésitez pas à me joindre pour une collaboration, une opportunité ou simplement pour échanger.",
+    mapTitle: "Localisation en Tunisie",
     footerName: "Mohamed Aziz Omri"
   }
 };

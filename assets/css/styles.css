@@ -123,6 +123,17 @@ img {
 
 .section {
   padding: 4rem 0;
+  
+  /* Fade-in initial state */
+  opacity: 0;
+  transform: translateY(50px); /* slight downward movement */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Fade-in when visible */
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card {
@@ -266,6 +277,137 @@ img {
   color: #fff;
   transform: scale(1.2);
 }
+
+
+
+/* Common class for all sections */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(50px); /* slight downward movement */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Triggered when visible */
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+/* ===== Map Section ===== */
+#map-section {
+  padding: 6rem 0;
+  text-align: center;
+  color: var(--text-color);
+}
+
+#map-section h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  margin-bottom: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+#map-section h3::before {
+  content: "📍";
+  font-size: 1.8rem;
+  animation: bouncePin 2s infinite ease-in-out;
+}
+
+/* Smooth pin animation */
+@keyframes bouncePin {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Map container styling */
+#map {
+  width: 100%;
+  height: 420px;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background-color: #0f172a;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  border: 1.5px solid rgba(30, 144, 255, 0.4);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* Hover interactivity */
+#map:hover {
+  transform: scale(1.015);
+  box-shadow: 0 12px 50px rgba(30, 144, 255, 0.25);
+  border-color: var(--primary-color);
+}
+
+/* Map control styling (dark mode) */
+.leaflet-control-container .leaflet-control {
+  background-color: rgba(25, 25, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  background-color: rgba(30, 30, 45, 0.85) !important;
+  color: #ddd !important;
+  border: none !important;
+  font-weight: bold;
+}
+
+.leaflet-control-zoom-in:hover,
+.leaflet-control-zoom-out:hover {
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+
+
+.map-mode-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  font-size: 18px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.map-mode-btn:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.map-mode-btn.glow {
+  animation: glowAnim 1.5s infinite alternate;
+}
+
+@keyframes glowAnim {
+  from { box-shadow: 0 0 5px rgba(255, 215, 0, 0.6); }
+  to { box-shadow: 0 0 15px rgba(255, 215, 0, 1); }
+}
+
+
+
+/* Responsive map height */
+@media (max-width: 768px) {
+  #map {
+    height: 300px;
+  }
+}
+
+
 
 
 .hero-photo img {

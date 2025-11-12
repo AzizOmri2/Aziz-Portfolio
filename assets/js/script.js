@@ -10,46 +10,61 @@ if (navToggle && navList) {
   });
 }
 
-// ===== Navbar Active Status =====
+// ===== Smooth Scroll + Active Link =====
 const navLinks = document.querySelectorAll("#navList a");
 const sections = document.querySelectorAll("section");
 
-// ----- Active on Click -----
 navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.forEach(l => l.classList.remove("active"));
-    link.classList.add("active");
-  });
-});
-
-// ----- Active on Scroll -----
-window.addEventListener("scroll", () => {
-  let currentSection = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120; // adjust offset if needed
-    if (window.scrollY >= sectionTop) {
-      currentSection = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${currentSection}`) {
-      link.classList.add("active");
-    }
-  });
-});
-
-// ===== Smooth Scroll for Nav Links =====
-document.querySelectorAll(".nav-list a[href^='#']").forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
     const target = document.querySelector(link.getAttribute("href"));
-    if (target) target.scrollIntoView({ behavior: "smooth" });
-    navList.classList.remove("show"); // Close nav on mobile
+    if (!target) return;
+
+    // Smooth scroll
+    target.scrollIntoView({ behavior: "smooth" });
+
+    // Immediately update active class
+    navLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+
+    // Close mobile menu if open
+    navList.classList.remove("show");
   });
 });
+
+// Update active link on scroll
+window.addEventListener("scroll", () => {
+  let scrollPos = window.scrollY + window.innerHeight / 3; // offset for earlier highlight
+  sections.forEach(section => {
+    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${section.id}`) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+});
+
+
+// ===== Section Fade In =====
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.section');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // animate once
+      }
+    });
+  }, { threshold: 0.2 }); // trigger when 20% visible
+
+  sections.forEach(section => observer.observe(section));
+});
+
+
 
 // ===== Year Auto Update =====
 const yearEl = document.getElementById("year");
@@ -388,6 +403,7 @@ certImages.forEach(img => {
 });
 
 
+
 // ===== Language System (Using translations.js) =====
 function loadTranslations(lang) {
   const data = translations[lang];
@@ -459,3 +475,110 @@ backToTopBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+
+
+// ===== Animation for sections 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.fade-in-section');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // animate only once
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => observer.observe(section));
+});
+
+
+// ===== LEAFLET MAP =====
+
+// Initialize map
+const map = L.map('map', {
+  center: [36.901788, 10.185660], // ESPRIT, Ariana
+  zoom: 18,
+  zoomControl: true
+});
+
+// Tile layers
+const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://carto.com/">CARTO</a> contributors',
+  maxZoom: 20,  // allow zoom up to 20
+  minZoom: 0
+});
+
+const lightTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+  maxZoom: 20,  // allow zoom up to 20
+  minZoom: 0
+});
+
+// Add initial dark tiles
+darkTiles.addTo(map);
+
+// Custom Glowing Marker
+const glowingMarker = L.divIcon({ className: 'glow-marker' });
+
+const marker = L.marker([36.901788, 10.185660], { icon: glowingMarker })
+  .addTo(map)
+  .bindPopup("Ariana Soghra, Tunisia 🌍")
+  .openPopup();
+
+// Responsive behavior
+function recenterMap() {
+  map.invalidateSize();
+  map.setView([36.901788, 10.185660], window.innerWidth < 768 ? 12 : 13);
+}
+window.addEventListener('resize', recenterMap);
+window.addEventListener('load', recenterMap);
+
+// ===== Map Light/Dark Mode Toggle Button =====
+let darkMode = true;
+
+const MapModeControl = L.Control.extend({
+  options: { position: 'topright' },
+  onAdd: function(map) {
+    const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom map-mode-btn');
+    
+    container.innerHTML = '🌞'; // initial icon: sun = light mode
+    container.title = 'Switch to Light Mode';
+
+    L.DomEvent.on(container, 'click', function(e) {
+      L.DomEvent.stopPropagation(e);
+      L.DomEvent.preventDefault(e);
+
+      if(darkMode){
+        map.removeLayer(darkTiles);
+        lightTiles.addTo(map);
+        container.innerHTML = '🌙'; // moon = dark mode
+        container.title = 'Switch to Dark Mode';
+        container.classList.add('glow'); // glow animation
+      } else {
+        map.removeLayer(lightTiles);
+        darkTiles.addTo(map);
+        container.innerHTML = '🌞'; // sun = light mode
+        container.title = 'Switch to Light Mode';
+        container.classList.remove('glow');
+      }
+      darkMode = !darkMode;
+    });
+
+    return container;
+  }
+});
+
+map.addControl(new MapModeControl());
+
+map.on('click', function(e) {
+  L.popup()
+    .setLatLng(e.latlng)
+    .setContent("Lat: " + e.latlng.lat.toFixed(6) + "<br>Lng: " + e.latlng.lng.toFixed(6))
+    .openOn(map);
+});
+
+// ===== END MAP =====
