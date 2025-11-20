@@ -691,6 +691,39 @@ img {
   color: var(--text-muted);
 }
 
+/* ==== Alert Modal Toast ==== */
+.modal-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  color: #fff;
+  padding: 12px 20px 12px 16px; /* extra left padding for icon */
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(20px) scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 3000;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between icon and text */
+}
+
+.modal-toast.show {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.modal-toast i {
+  font-size: 1rem;
+}
+
 /* === 🧩 MODAL STYLING (Enhanced) === */
 .modal-backdrop {
   position: fixed;
@@ -720,8 +753,10 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-top: 2px solid var(--accent);
   border-radius: 18px;
-  padding: 2.5rem 2rem;
-  max-width: 1200px;
+  padding: 3rem 4rem;
+  max-width: 900px;
+  max-height: 90vh; /* 90% of viewport height */
+  overflow-y: auto; /* Vertical scroll */
   width: 90%;
   box-shadow: 0 8px 35px rgba(0, 0, 0, 0.5);
   transform: translateY(30px) scale(0.96);
@@ -729,9 +764,167 @@ img {
   transition: all 0.4s ease;
 }
 
+/* ===== Scroll Bar In Modal ===== */
+.modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: rgba(30, 144, 255, 0.4);
+  border-radius: 8px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background: rgba(30, 144, 255, 0.7);
+}
+
+/* Firefox support */
+.modal {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(30,144,255,0.4) rgba(255,255,255,0.02);
+}
+
+/* ===== Carousel Container ===== */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-content {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+}
+
+.carousel-content img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.carousel-content img:hover {
+  transform: scale(1.01);
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.55); 
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  text-align: center;
+  max-width: 85%;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Optional: hover effect on the image to slightly “lift” the caption */
+.carousel-content:hover .carousel-caption {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* Caption Styling */
+.carousel-caption {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 90%;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Prev/Next Buttons */
+.carousel-btn {
+  background: rgba(30, 144, 255, 0.85);
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: #1e90ff;
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(30,144,255,0.8);
+}
+
+#carouselPrev {
+  position: absolute;
+  left: -20px;
+}
+
+#carouselNext {
+  position: absolute;
+  right: -20px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .carousel-content img {
+    max-height: 280px;
+  }
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+  }
+  .modal h3 {
+    font-size: 1.4rem;
+  }
+  .carousel-caption {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    max-width: 90%;
+  }
+}
+
 .modal-backdrop.show .modal {
   transform: translateY(0) scale(1);
   opacity: 1;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }
 
 /* Close button */
@@ -760,45 +953,62 @@ img {
   transform: rotate(90deg);
 }
 
-.modal-images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 15px 0;
-  justify-content: center;
-}
-
-.modal-images img {
-  width: 450px;
-  height: 230px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.modal-images img:hover {
-  transform: scale(1.05);
-}
-
-/* Modal Content */
+/* Modal Title Styling */
 .modal h3 {
   color: var(--accent);
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
+  transition: filter 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease, border-bottom 0.3s ease;
+  cursor: default;
+  display: inline-block; /* required for border-bottom underline */
+  border-bottom: 2px solid transparent; /* initial invisible underline */
+}
+
+/* Hover effect - darker shade of the original color + white underline */
+.modal h3:hover {
+  filter: brightness(0.7); /* darker */
+  transform: scale(1.05);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  border-bottom: 2px solid var(--accent);  ; /* white underline */
 }
 
 .modal p {
   color: var(--text-light);
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.3;
 }
 
 .modal h4 {
-  color: var(--text-muted);
+  color: white;
   margin-top: 1.5rem;
   font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover underline using pseudo-element */
+.modal h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.modal h4:hover {
+  color: var(--accent);
+  transform: translateY(-2px); /* slight lift */
+}
+
+.modal h4:hover::after {
+  width: 37%; /* underline grows on hover */
 }
 
 /* === Modal List with Icons === */
@@ -829,6 +1039,11 @@ img {
   transform: translateY(2px);
 }
 
+.modal ul li:hover::before {
+  color: #1e90ff; /* brighter blue on hover */
+  transform: translateY(-2px) scale(1.2);
+}
+
 .modal-skills {
   margin-top: 1.2rem;
   color: var(--accent);
@@ -836,19 +1051,6 @@ img {
   font-size: 0.85rem;    /* Smaller */
 }
 
-/* Subtle glowing border effect */
-.modal::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(30,144,255,0.6), transparent);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
 
 
 /* === 💼 What I'm Doing Section === */

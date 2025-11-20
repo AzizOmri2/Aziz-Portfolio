@@ -92,6 +92,28 @@ if (expBtn && eduBtn && experienceSection && educationSection) {
   });
 }
 
+
+// ===== Modal Toast Under Deployment ==== 
+document.addEventListener("DOMContentLoaded", () => {
+  const liveDemoBtns = document.querySelectorAll('.live-demo-btn');
+  const modalToast = document.getElementById('modalToast');
+
+  liveDemoBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault(); // prevent link redirection
+
+      // Show the toast
+      modalToast.classList.add('show');
+
+      // Hide it after 2 seconds
+      setTimeout(() => {
+        modalToast.classList.remove('show');
+      }, 2000);
+    });
+  });
+});
+
+
 // ===== Modal Elements =====
 const overviewBtns = document.querySelectorAll(".overview-btn");
 const modalBackdrop = document.getElementById("modalBackdrop");
@@ -105,6 +127,94 @@ const modalSkills = document.getElementById("modalSkills");
 
 // ===== Project Data (EN + FR) =====
 const projectData = {
+  tastytounsi: {
+    en: {
+      title: "Tasty Tounsi",
+      desc: "A modern Tunisian food discovery and ordering platform featuring an intuitive interface, dynamic menu management, and secure online payments.",
+      keyTitle: "Overview & Key Achievements",
+      list: [
+        "Designed a responsive and user-friendly interface for browsing traditional Tunisian dishes.",
+        "Implemented a dynamic admin dashboard for managing food items, categories, and orders.",
+        "Added online payment integration using Stripe for secure and seamless transactions.",
+        "Developed a RESTful API with NodeJS/ExpressJS to handle client–server communication.",
+        "Optimized database structure with MongoDB to support scalability and fast data retrieval."
+      ],
+      skills: "Technologies : MongoDB, ReactJS, NodeJS, ExpressJS, Stripe API"
+    },
+    fr: {
+      title: "Tasty Tounsi",
+      desc: "Une plateforme moderne pour découvrir et commander des plats tunisiens, avec une interface intuitive, une gestion dynamique du menu et des paiements en ligne sécurisés.",
+      keyTitle: "Aperçu général & Points forts",
+      list: [
+        "Conception d’une interface responsive et intuitive pour explorer les plats tunisiens.",
+        "Développement d’un tableau de bord admin pour gérer les plats, catégories et commandes.",
+        "Intégration des paiements en ligne via Stripe de manière fluide et sécurisée.",
+        "Création d’une API REST avec NodeJS/ExpressJS assurant la communication client-serveur.",
+        "Optimisation de la structure de base de données avec MongoDB pour plus de performance et d’évolutivité."
+      ],
+      skills: "Technologies : MongoDB, ReactJS, NodeJS, ExpressJS, Stripe API"
+    },
+    images: [
+      { 
+        src: "assets/images/projects/tastytounsi/User - Home Page.PNG", 
+        caption: "Tasty Tounsi - Home Page" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/User - Login PopUp.PNG", 
+        caption: "Tasty Tounsi - Login" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/User - Explore Menu.PNG", 
+        caption: "Tasty Tounsi - Explore Menu" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/User - Add To Cart.PNG", 
+        caption: "Tasty Tounsi - Add To Cart" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/User - Proceed To Checkout.PNG", 
+        caption: "Tasty Tounsi - Proceed To Checkout" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/User - Proceed To Payment.PNG", 
+        caption: "Tasty Tounsi - Proceed To Payment" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/User - Orders List.PNG", 
+        caption: "Tasty Tounsi - Orders List" 
+      },
+
+      { 
+        src: "assets/images/projects/tastytounsi/loginAdmin.PNG", 
+        caption: "Admin Panel - Login" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/admin - Dashboard.PNG", 
+        caption: "Admin Panel – Dashboard" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/admin - Add Food Night Mode.png", 
+        caption: "Admin Panel – Add Food" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/admin - List Food Night Mode.PNG", 
+        caption: "Admin Panel - Food's List" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/admin - Details Food Night Mode.PNG", 
+        caption: "Admin Panel – Food Details" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/admin - Orders List.PNG", 
+        caption: "Admin Panel - Orders List" 
+      },
+      { 
+        src: "assets/images/projects/tastytounsi/admin - Settings.PNG", 
+        caption: "Admin Panel - Settings" 
+      },
+    ]
+  },
+
   hrprojectflow: {
     en: {
       title: "HR Project Workflow",
@@ -132,7 +242,77 @@ const projectData = {
       ],
       skills: "Technologies : Ruby On Rails, Angular, PostgreSQL, Calendar API, Mistral AI, Jenkins, Sonarqube, Nexus, Docker, Kubernetes, Prometheus, Grafana"
     },
-    images: ["assets/images/projects/hrprojectworkflow/web_home_page_hrprojectworkflow.png"]
+    images: [
+      { 
+        src: "assets/images/projects/hrprojectworkflow/HRProjectWorkflow - Home Page.PNG", 
+        caption: "HR Project Workflow - Home Page" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Candidate - View Job Offers.PNG", 
+        caption: "Candidate - View Job Offers" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Candidate - View Job Offer Details.PNG", 
+        caption: "Candidate - View Job Offer Details" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Candidate - Add Application.PNG", 
+        caption: "Candidate - Add Application" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Candidate - View My Applications.PNG", 
+        caption: "Candidate - View My Applications" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Candidate - Generate Profile.PNG", 
+        caption: "Candidate - Generate Profile" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Candidate - Loading Generate Profile.PNG", 
+        caption: "Candidate - Loading Generate Profile" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Candidate - Profile Generated.PNG", 
+        caption: "Candidate - Profile Generated" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Admin Panel - Welcome.PNG", 
+        caption: "Admin Panel - Welcome" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Admin Panel - Account Management.PNG", 
+        caption: "Admin Panel - Account Management" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Admin Panel - Add User.PNG", 
+        caption: "Admin Panel - Add User" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Admin Panel - Add Job Offer.PNG", 
+        caption: "Admin Panel - Add Job Offer" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/Admin Panel - View Job Offers.PNG", 
+        caption: "Admin Panel - View Job Offers" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/HR Panel - Welcome.PNG", 
+        caption: "HR Panel - Welcome" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/HR Panel - View Interviews With Calendar.PNG", 
+        caption: "HR Panel - View Interviews With Calendar" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/HR Panel - Show Profiles.PNG", 
+        caption: "HR Panel - Show Profiles" 
+      },
+      { 
+        src: "assets/images/projects/hrprojectworkflow/HR Panel - Candidate's Evaluation.PNG", 
+        caption: "HR Panel - Candidate's Evaluation" 
+      },
+      
+    ]
   },
 
   pmwebapp: {
@@ -271,6 +451,12 @@ const projectData = {
 };
 
 
+function showImage(index, images) {
+  const img = images[index];
+  carouselImage.src = img.src;
+  carouselCaption.textContent = img.caption || '';
+}
+
 // ===== Modal Open =====
 if (overviewBtns.length && modalBackdrop) {
   overviewBtns.forEach(btn => {
@@ -291,63 +477,42 @@ if (overviewBtns.length && modalBackdrop) {
       });
       modalSkills.textContent = data.skills;
 
-      const existingImg = document.getElementById("modalImages");
-      if (existingImg) existingImg.remove();
-      if (projectData[proj].images) {
-        const imgContainer = document.createElement("div");
-        imgContainer.id = "modalImages";
-        imgContainer.className = "modal-images";
-        projectData[proj].images.forEach(src => {
-          const img = document.createElement("img");
-          img.src = src;
-          img.alt = `${data.title} preview`;
-          img.style.cursor = "pointer";
+      // Carousel images
+      const images = projectData[proj].images.map(i => 
+        typeof i === "string" ? { src: i, caption: "" } : i
+      );
 
-          // Click to open full-size in new tab/lightbox
-          img.addEventListener("click", () => {
-            const lightbox = document.createElement("div");
-            lightbox.style.position = "fixed";
-            lightbox.style.top = "0";
-            lightbox.style.left = "0";
-            lightbox.style.width = "100%";
-            lightbox.style.height = "100%";
-            lightbox.style.background = "rgba(0,0,0,0.85)";
-            lightbox.style.display = "flex";
-            lightbox.style.alignItems = "center";
-            lightbox.style.justifyContent = "center";
-            lightbox.style.zIndex = "3000";
+      currentImageIndex = 0;
+      showImage(currentImageIndex, images);
 
-            const lbImg = document.createElement("img");
-            lbImg.src = src;
-            lbImg.style.maxWidth = "90%";
-            lbImg.style.maxHeight = "90%";
-            lbImg.style.borderRadius = "12px";
-            lbImg.style.boxShadow = "0 0 20px rgba(30,144,255,0.5)";
-            lightbox.appendChild(lbImg);
+      // Prev/Next button handlers
+      carouselPrev.onclick = () => {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        showImage(currentImageIndex, images);
+      };
 
-            lightbox.addEventListener("click", () => lightbox.remove());
-            document.body.appendChild(lightbox);
-          });
-
-          imgContainer.appendChild(img);
-        });
-        modalDesc.insertAdjacentElement("afterend", imgContainer);
-      }
+      carouselNext.onclick = () => {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        showImage(currentImageIndex, images);
+      };
 
       modalBackdrop.classList.add("show");
       modalBackdrop.setAttribute("aria-hidden", "false");
+      document.body.classList.add('no-scroll');
     });
   });
 
   modalClose?.addEventListener("click", () => {
     modalBackdrop.classList.remove("show");
     modalBackdrop.setAttribute("aria-hidden", "true");
+    document.body.classList.remove('no-scroll');
   });
 
   modalBackdrop.addEventListener("click", e => {
     if (e.target === modalBackdrop) {
       modalBackdrop.classList.remove("show");
       modalBackdrop.setAttribute("aria-hidden", "true");
+      document.body.classList.remove('no-scroll');
     }
   });
 
@@ -362,6 +527,7 @@ if (overviewBtns.length && modalBackdrop) {
         modalBackdrop.classList.remove("show"); // Close modal if no lightbox
         modalBackdrop.setAttribute("aria-hidden", "true");
       }
+      document.body.classList.remove('no-scroll');
     }
   });
 }
