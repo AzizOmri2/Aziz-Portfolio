@@ -603,10 +603,38 @@ function populateSoftSkills(lang) {
 }
 
 
+// ===== CV Download Link =====
+const downloadBtn = document.getElementById("downloadCV");
+const contactCVBtn = document.getElementById("contactCVBtn");
+
+function updateCVLink(lang) {
+  if (!downloadBtn) return;
+
+  if (lang === "fr") {
+    downloadBtn.href = "assets/resume-fr.pdf";
+  } else {
+    downloadBtn.href = "assets/resume-en.pdf";
+  }
+}
+
+
+function updateCVLinkContact(lang) {
+  if (!contactCVBtn) return;
+
+  if (lang === "fr") {
+    contactCVBtn.href = "assets/resume-fr.pdf";
+  } else {
+    contactCVBtn.href = "assets/resume-en.pdf";
+  }
+}
+
+
 
 
 const langToggle = document.getElementById("langToggle");
 const savedLang = localStorage.getItem("lang") || "en";
+updateCVLink(savedLang);
+updateCVLinkContact(savedLang);
 loadTranslations(savedLang);
 
 // Call after loading translations
@@ -617,7 +645,9 @@ if (langToggle) {
     const currentLang = localStorage.getItem("lang") || "en";
     const newLang = currentLang === "en" ? "fr" : "en";
     loadTranslations(newLang);
-    populateSoftSkills(newLang); // ✅ Add this line
+    populateSoftSkills(newLang);
+    updateCVLink(newLang);
+    updateCVLinkContact(newLang);
   });
 }
 
