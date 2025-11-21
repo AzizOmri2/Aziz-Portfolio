@@ -180,6 +180,10 @@ const projectData = {
         caption: "Tasty Tounsi - Proceed To Payment" 
       },
       { 
+        src: "assets/images/projects/tastytounsi/User - 404 Not Found.PNG", 
+        caption: "Tasty Tounsi - 404 Not Found" 
+      },
+      { 
         src: "assets/images/projects/tastytounsi/User - Orders List.PNG", 
         caption: "Tasty Tounsi - Orders List" 
       },
