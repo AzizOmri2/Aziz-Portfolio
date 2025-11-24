@@ -347,7 +347,7 @@ const projectData = {
 
   paidleave: {
     en: {
-      title: "Paid Leave Management System",
+      title: "Permitrack",
       desc: "Web application designed to manage and automate paid leave requests, approvals, and employee records.",
       keyTitle: "Overview & Key Achievements",
       list: [
@@ -358,7 +358,7 @@ const projectData = {
       skills: "Technologies: Ruby, Ruby on Rails, Angular, SQLite, Postman"
     },
     fr: {
-      title: "Système de Gestion des Congés Payés",
+      title: "Permitrack",
       desc: "Application web destinée à automatiser la gestion des demandes de congés, des validations et des dossiers employés.",
       keyTitle: "Aperçu général & Points forts",
       list: [
@@ -368,7 +368,28 @@ const projectData = {
       ],
       skills: "Technologies : Ruby, Ruby on Rails, Angular, SQLite, Postman"
     },
-    images: ["assets/images/projects/paidleave/dashboard_web_page.png"]
+    images: [
+      { 
+        src: "assets/images/projects/paidleave/Admin Panel - Login.PNG", 
+        caption: "Admin Panel - Login" 
+      },
+      { 
+        src: "assets/images/projects/paidleave/Admin Panel - Dashboard.PNG", 
+        caption: "Admin Panel - Dashboard" 
+      },
+      { 
+        src: "assets/images/projects/paidleave/Admin Panel - Create Permission.PNG", 
+        caption: "Admin Panel - Create Permission" 
+      },
+      { 
+        src: "assets/images/projects/paidleave/Admin Panel - Permissions List.PNG", 
+        caption: "Admin Panel - Permissions List" 
+      },
+      { 
+        src: "assets/images/projects/paidleave/Admin Panel - My Account.PNG", 
+        caption: "Admin Panel - My Account" 
+      },
+    ]
   },
 
   esprithub: {

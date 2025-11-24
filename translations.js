@@ -61,7 +61,6 @@ const translations = {
     proj_pm_title: "Project Management Web App",
     proj_esprit_title: "Esprit Hub",
     proj_energy_title: "Energy Box",
-    proj_paidleave_title: "Paid Leave Management",
 
 
     certTitle: "Certifications",
@@ -159,7 +158,6 @@ const translations = {
     proj_pm_title: "Application Web de Gestion de Projets",
     proj_esprit_title: "Esprit Hub",
     proj_energy_title: "Energy Box",
-    proj_paidleave_title: "Gestion des Congés Payés",
 
     certTitle: "Certifications",
     cert1Title: "Introduction aux services cloud Microsoft Azure",
