@@ -628,6 +628,62 @@ function populateSoftSkills(lang) {
 }
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const langToggle = document.getElementById("langToggle");
+  const body = document.body;
+  const savedLang = localStorage.getItem("lang") || "en";
+
+  // Initial load
+  updateCVLink(savedLang);
+  updateCVLinkContact(savedLang);
+  loadTranslations(savedLang);
+  populateSoftSkills(savedLang);
+
+  if (langToggle) {
+    langToggle.addEventListener("click", () => {
+      const currentLang = localStorage.getItem("lang") || "en";
+      const newLang = currentLang === "en" ? "fr" : "en";
+
+      // Create overlay for fade effect
+      const overlay = document.createElement("div");
+      overlay.style.position = "fixed";
+      overlay.style.top = 0;
+      overlay.style.left = 0;
+      overlay.style.width = "100%";
+      overlay.style.height = "100%";
+      overlay.style.backgroundColor = "#000"; // or body background
+      overlay.style.opacity = 0;
+      overlay.style.transition = "opacity 0.8s ease";
+      overlay.style.zIndex = 9999;
+      body.appendChild(overlay);
+
+      // Start fade-in of overlay
+      requestAnimationFrame(() => {
+        overlay.style.opacity = 1;
+      });
+
+      setTimeout(() => {
+        // Apply translations
+        loadTranslations(newLang);
+        populateSoftSkills(newLang);
+        updateCVLink(newLang);
+        updateCVLinkContact(newLang);
+
+        // Remove overlay to reveal translated page
+        overlay.style.opacity = 0;
+        overlay.addEventListener("transitionend", () => {
+          overlay.remove();
+        });
+
+        // Save new language
+        localStorage.setItem("lang", newLang);
+      }, 450);
+    });
+  }
+});
+
+
+
 // ===== CV Download Link =====
 const downloadBtn = document.getElementById("downloadCV");
 const contactCVBtn = document.getElementById("contactCVBtn");
@@ -651,29 +707,6 @@ function updateCVLinkContact(lang) {
   } else {
     contactCVBtn.href = "assets/resume-en.pdf";
   }
-}
-
-
-
-
-const langToggle = document.getElementById("langToggle");
-const savedLang = localStorage.getItem("lang") || "en";
-updateCVLink(savedLang);
-updateCVLinkContact(savedLang);
-loadTranslations(savedLang);
-
-// Call after loading translations
-populateSoftSkills(savedLang);
-
-if (langToggle) {
-  langToggle.addEventListener("click", () => {
-    const currentLang = localStorage.getItem("lang") || "en";
-    const newLang = currentLang === "en" ? "fr" : "en";
-    loadTranslations(newLang);
-    populateSoftSkills(newLang);
-    updateCVLink(newLang);
-    updateCVLinkContact(newLang);
-  });
 }
 
 
